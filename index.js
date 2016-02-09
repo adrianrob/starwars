@@ -34,3 +34,13 @@ var quotes = [{
   'author': '- Darth Vader',
   'quote': 'The Force is strong with this one.'
 }];
+
+function getrandquote()
+{
+  var randq = Math.floor((Math.random() * quotes.length) + 1);
+  console.log(quotes[randq].author);
+  console.log(quotes[randq].quote);
+}
+
+
+getrandquote();
