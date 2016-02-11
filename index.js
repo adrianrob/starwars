@@ -42,5 +42,10 @@ function getrandquote()
   console.log(quotes[randq].quote);
 }
 
+function getquote(author)
+{
+  
+}
+
 
 getrandquote();
