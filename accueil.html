@@ -22,7 +22,7 @@
       </p>
     </div>
     <div class="container">
-      <button onclick="getrandquote()" class="myButton"  id="title">Random Quote!</button>
+      <button class="myButton"  id="title">Not working!</button>
       <h3 id="qcontainer"></h3>
       <h3 id="acontainer" ></h3>
     </div>
@@ -36,7 +36,7 @@
           <img width="100px" src="images/Yoda.jpg"/>
         </div>
         <div class="card-content">
-          <h4>Yoda</h4>
+          <h4>Yoda</br> </h4>
       </div>
     </div>
   </div>
@@ -135,9 +135,7 @@
       var randq = Math.floor((Math.random() * quotes.length));
       ReactDOM.render(<h3>{quotes[randq].quote}</h3>, document.getElementById('qcontainer'));
       ReactDOM.render(<h3>{quotes[randq].author}</h3>, document.getElementById('acontainer'));
-
     }
-
     function getquote(author)
     {
       var newquotes = [];
@@ -151,19 +149,16 @@
       if(newquotes.length > 0)
       {
         var randq = Math.floor((Math.random() * newquotes.length));
-        console.log(newquotes);
-        console.log(randq);
-        console.log(newquotes[randq].author);
-        console.log(newquotes[randq].quote);
         ReactDOM.render(<h3>{newquotes[randq].quote}</h3>, document.getElementById('qcontainer'));
         ReactDOM.render(<h3>{newquotes[randq].author}</h3>, document.getElementById('acontainer'));
-     }
+      }
     }
-
-     //  getrandquote();
-    //getquote('- Yoda');
-  //    getquote("- Darth Vader")
-
+    var Butt = React.createClass( {
+      getInitialState: function() {return {pressed: false}; },
+      handleClick: function(event) { getrandquote(); },
+      render: function() { return (<p onClick={this.handleClick}>Random quote</p>);}});
+      
+      ReactDOM.render(<Butt />, document.getElementById('title'));
     </script>
   </body>
 </html>
